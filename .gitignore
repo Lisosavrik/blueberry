@@ -1,2 +1,8 @@
 english_site.code-workspace
 venv
+
+__pycache__
+backend/__pycache__
+
+.DS_Store
+static/img/.DS_Store
