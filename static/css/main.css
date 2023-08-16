@@ -1,0 +1,236 @@
+body {
+    background-color:rgb(245, 245, 245);
+    margin: 0%;
+    font-family:  "Monaco", sans-serif;
+}
+
+header{
+    background-color: #f5f5f5;
+}
+
+
+
+.header_title1 {
+    font-size: 24px;
+    margin-left: -20px;
+    margin-top: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 0%;
+    left: 100px;
+    color: rgb(31,52,71);
+
+
+}
+
+.header_title2 {
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: 50px;
+    left:  50px;
+    color: rgb(31,52,71);
+}
+
+
+.logo_img{
+    width: 80px;
+}
+.logo {
+    width: 200px;
+    height: 90px;
+    position: relative;
+}
+
+
+
+
+.footer_flex_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    bottom: 0%;
+    width: 100%;
+    height: 180px;
+    position: relative;
+    border-top: 2px solid rgb(31,52,71);
+}
+
+.information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.information div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 150px;
+}
+
+.information div a{
+    color: rgb(31,52,71);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: scale 0.5s;
+}
+
+.information div a:hover{
+    scale: 1.1;
+}
+
+.logo_footer{
+    width: 300px;
+}
+
+.text_footer{
+    position: absolute;
+    margin: 10px;
+    bottom: 20px;
+    left:10px;
+    font-size: 15px;
+    color: rgb(31,52,71);
+    text-align: center;
+}
+
+.footer_title1{
+    position: absolute;
+    font-size: 24px;
+    left: 108px;
+    bottom: 112px;
+    font-weight: 700;
+    color: rgb(31,52,71);
+}
+
+.footer_title2{
+    position: absolute;
+    font-size: 22px;
+    left: 80px;
+    bottom: 86px;
+    font-weight: 700;
+    color: rgb(31,52,71);
+}
+
+.logo_footer_img{
+    position: absolute;
+    left: 35px;
+    bottom: 85px;
+
+}
+
+.up a{
+    color: rgb(31,52,71);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.up{
+    height: fit-content;
+    position: absolute;
+    bottom: 10px;
+    left: 750px;
+    transition: scale 1s;
+}
+
+.up:hover{
+    scale: 1.2;
+}
+
+
+
+.auth_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.auth_form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 30px 40px;
+    padding-bottom: 30px;
+}
+
+.form_header {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.form_header a:hover{
+    background-color: rgb(83, 132, 177);
+}
+.form_header span{
+    font-size: 14px;
+}
+
+.form_header a{
+    font-size: 11px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 800;
+    width: fit-content;
+    display: inline-block;
+    padding: 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    background-color: rgb(31, 52, 71);
+    text-wrap: nowrap;
+    height: 18px;
+    transition: background-color 0.02s;
+}
+
+.input_field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.input_field input {
+    width: 310px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 0px 25px;
+    font-family:  "Monaco", sans-serif;
+    font-size: 15px;
+}
+
+.input_name{
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.auth_btn{
+    align-self: flex-end;
+}
+.auth_btn button {
+    font-family:  "Monaco", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: whitesmoke;
+    background-color: rgb(31, 52, 71);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.02s;
+}
+
+.auth_btn button:hover{
+    background-color: rgb(83, 132, 177);
+}

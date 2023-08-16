@@ -1,0 +1,66 @@
+.auth_main_local{
+    padding-bottom: 40px;
+}
+
+
+.logo_local {
+    scale: 0.7;
+    right: 145px;
+    top: 54px;
+    }
+
+
+.auth_form_local{
+    gap: 10px;
+}
+
+.form_header_local{
+    left: 86px;
+}
+
+.auth_btn_local{
+
+    padding: 13px 0px;
+}
+
+
+
+
+.password_info{
+    width: fit-content;
+    position: relative;
+    bottom: 111px;
+    left: -89px;
+
+}
+
+.password_info_img{
+    opacity: .6;
+    transition: opacity 0.05s;
+    width: 20px;
+}
+.password_instr{
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+
+    top: -150px;
+    left: 20px;
+    padding-right: 18px;
+}
+.password_instr ul{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    text-wrap: nowrap;
+}
+.password_info:hover .password_info_img{
+    opacity: 0.9;
+}
+
+.password_info:hover .password_instr{
+    display: block;
+
+}

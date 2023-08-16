@@ -1,0 +1,217 @@
+
+
+.index_fast_access {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    justify-content: start;
+    align-items: flex-end;
+    flex-grow: 2;
+    margin-left: 157px;
+    width: 100vw;
+}
+
+.index_fast_access a{
+    font-size: 20px;
+}
+
+.button_spirit{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 0;
+        height: 0;
+        overflow: visible;
+}
+
+.button_name {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(31,52,71);
+    transition: font-size 0.5s;
+    text-wrap: nowrap;
+} 
+
+.button{
+    width: fit-content;
+    padding: 10px;
+}
+
+.button:hover .button_name{
+    color: rgb(83, 132, 177);
+    font-size: 22px;
+}
+
+.index_header_container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid rgb(31, 52, 71);
+    align-items: end;
+    width: 100vw;
+}
+
+
+.auth{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100px;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+
+
+.index_login_btn {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(31,52,71);
+    transition: font-size 0.5s;
+    text-wrap: nowrap;
+    padding: 10px 20px;
+    padding-right: 50px;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: background-color 0.02s, color 0.02s;
+}
+
+.index_login_btn:hover{
+    background-color: rgb(83, 132, 177);
+    color:whitesmoke;
+}
+
+.login_margin{
+    margin-right: 87px;
+
+}
+
+
+/* 
+.index_login_btn:hover .index_signup_btn{
+    background-color:whitesmoke;
+    color: rgb(31,52,71);
+} */
+
+
+.index_signup_btn {
+    font-size: 18px;
+    text-decoration: none;
+    color:  whitesmoke;
+    transition: font-size 0.5s;
+    text-wrap: nowrap;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: rgb(31,52,71);
+    transition: background-color 0.02s, color 0.02s;
+}
+
+.index_signup_btn:hover{
+    background-color: rgb(83, 132, 177);
+    color:whitesmoke;
+}
+
+.signup_margin{
+    margin-right: 20px;
+}
+
+.index_main .text{
+    padding: 10px 8vw;
+}
+
+
+.index_main .text h3{
+    font-size: 25px;
+}
+
+.index_main .text p{
+    font-size: 20px;
+    width: 800px;
+}
+
+.index_main .text ul li{
+    font-size: 18px
+}
+.spaced_repetitions{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+.spaced_repetitions_img{
+    width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.spaced_repetitions a{
+    color: rgb(31, 52, 71);
+    transition: scale 0.5s, color 0.5s;
+    display: inline-block;
+}
+
+.spaced_repetitions a:hover{
+    color: rgb(83, 132, 177);
+    scale: 1.1;
+}
+
+.span_text {
+    width: 60vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    margin-left: 11vw;
+}
+
+.prev_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.prev_btn p{
+    width: 770px;
+    font-size: 20px;
+}
+
+
+
+
+.start_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 31px;
+    padding: 10px 10px;
+    border-radius: 25px;
+    transition: background-color 0.05s, color 0.05s;
+
+}
+
+
+.start_btn{
+    color: black;
+    font-weight: 800;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.start_btn:active{
+    background-color: rgb(31,52,71);
+    color:whitesmoke;
+}

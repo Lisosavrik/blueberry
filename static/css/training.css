@@ -1,0 +1,217 @@
+.training_header_container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    padding-bottom: 10px;
+    position: sticky;
+    top: 0;
+    height: 85px;
+    border-bottom: 3px solid rgb(31,52,71);
+}
+.training_fast_access{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 30%;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+
+.button_spirit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 0;
+    height: 0;
+    overflow: visible;
+}
+
+.button_name {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(31,52,71);
+    transition: font-size 0.5s;
+    text-wrap: nowrap;
+} 
+
+.button{
+    width: fit-content;
+    padding: 10px;
+}
+
+.button:hover .button_name{
+    color: rgb(83, 132, 177);
+    font-size: 22px;
+}
+
+.button:hover .button_tip{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button_tip{
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: none;
+    position: absolute;
+    border-radius: 5%;
+    width: fit-content;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    transform: translateX(-70%)
+}
+
+.button_tip a{
+    color: rgb(59,78,93);
+    font-size: 15px;
+    text-decoration: none;
+    text-wrap: nowrap;
+    padding: 5px;
+    transition: scale 0.5s;
+}
+
+.button_tip a:hover{
+    scale: 1.1;
+}
+
+
+.training_main{
+    width: 80vw;
+    height: 80vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not_yet{
+    color: gray;
+    font-style: italic;
+    font-size:  20px;
+}
+
+.not_yet_tip{
+    width: fit-content;
+}
+
+.not_yet_tip img{
+    margin-bottom: 30px;
+}
+
+.not_yet_tip:hover .tutorial_tip{
+    display: block;
+}
+
+.tutorial_tip{
+    display: none;
+    width: 200px;
+    position: absolute;
+    top: 17.5vw;
+    left: 58vw;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding-left: 10px;
+}
+.tutorial_tip p{
+    color: rgb(31,52,71);
+}
+
+.tutorial_tip a{
+    color: rgb(31,52,71);
+}
+
+
+
+
+.aside{
+    position: fixed;
+    top:0%;
+    width: fit-content;
+    right: 5px;
+    top: 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.aside_img{
+    background-image: url("img/font_aside.jpeg");
+    width: 250px;
+    height: 106px;
+    margin-top: 5px;
+}
+
+.avatar{
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-top: 15px;
+    transition: transform 2s;
+}
+
+.avatar:hover{
+    transform: rotateY(180deg);
+}
+
+.aside_txt{
+    background-color: rgb(59,78,93);
+    width: 250px;
+    height: 350px;
+    text-align:start;
+}
+
+.aside_txt ul{
+    margin: 0%;
+    list-style-type: none;
+}
+
+.aside_txt ul li{
+    margin-bottom: 20px;
+    color: lavenderblush;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+}
+
+.aside_txt ul .user_name a{
+    font-size: 20px;
+    color: lavenderblush;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.aside_position a{
+    color: lavenderblush;
+    font-size: 15px;
+    text-decoration: none;
+    text-wrap: nowrap;
+}
+
+.aside_position img{
+    width: 30px;
+}
+
+.aside_position{
+    width: fit-content;
+    transition: scale 0.5s;
+}
+
+.aside_txt ul .aside_position:hover{
+    scale: 1.1;
+}
+
+.aside_up{
+    width: 60px;
+    position: absolute;
+    top: 420px;
+    transition: top 1s, scale 1s;
+}
+
+.aside_up:hover{
+    top: 415px;
+    scale: 1.1;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Lisa Ponomarenko">
+    <meta name="description" content="registration on the Blueberry site">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Blueberry, English, language, Spaced repetition, registration, log in">
+
+    <title>Blueberry login</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="sign_up.css">
+
+</head>
+<body>
+
+    <main class="auth_main auth_main_local">
+        <div id="logo" title="To the main page" class="logo logo_local">
+            <a href="file:///Users/mac/Desktop/хуйня/english_site/index.html">
+                <img src="img/blueberry_logo.jpg" alt="Blueberry.com" class="logo_img">
+                <span class="header_title1">Blue</span>
+                <span class="header_title2">berry</span>
+            </a>
+        </div>
+        <div class="form_header form_header_local">
+            <span>Already have an account? 
+                <a href="">Log in</a>
+            </span>
+        </div>
+
+
+        <form id="cool-form" class="auth_form auth_form_local"> 
+            <div id="name_field" class="input_field">
+                <label for="name_field">User Name</label>
+                <input id="name-field-value" type="text" required>
+                
+            </div>
+            <div id="email_field" class="input_field">
+                <label for="email_field">Email</label>
+                <input id="email_field_value" type="email" required>
+            </div>
+            <div id="password_field" class="input_field">
+                <label for="password_field">Password</label>
+                <input id="password_field_value" type="password" required>
+            </div>
+
+            <div class="password_info">
+                <img src="svg/info.svg" alt="info" class="password_info_img">
+
+                <div id="password_instr" class="password_instr">
+                    <ul>
+                        <li>8 characters minimum</li>
+                        <li> One lowercase character</li>
+                        <li>One uppercase character</li>
+                        <li>One number</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <div id="agreement">
+                <input id="agreement-value" type="checkbox" required>
+                <label>Sign privacy and security agreement</label>
+            </div>
+
+            <div id="sign_up_btn" class="auth_btn auth_btn_local">
+                <button type="submit"> Sign up </button>
+            </div>
+        </form>
+    </main>
+
+    <script lang="js" src="/static/scripts/jquery.min.js"></script>
+    <script lang="js" src="/static/scripts/utils.js"></script>
+    <script lang="js" src="/static/scripts/lesson1.js"></script>
+</body>
+</html>
