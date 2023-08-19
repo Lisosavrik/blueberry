@@ -38,8 +38,12 @@ class SQLClass():
             INSERT INTO Workspaces(name, user_id) VALUES('{name}', '{user_id}')
             """)
         
+        new_workspace_id = self.cursor.lastrowid
+
         self.update_db()
         self.close_db()
+
+        return new_workspace_id
 
     def new_table(self, name:str, workspace_id:int):
         self.db_connect()
@@ -77,8 +81,6 @@ class SQLClass():
             return False
         else:
             return True
-
-        
 
     def delete_user(self, user_id):
         self.db_connect()
@@ -162,7 +164,7 @@ class SQLClass():
     def get_user_id_with_login_and_password(self, login: str, password: str):
         self.db_connect()
 
-        self.cursor.execute(f"SELECT id FROM Users WHERE log_in='{login}' AND password={password}")
+        self.cursor.execute(f"SELECT user_id FROM Users WHERE log_in='{login}' AND password='{password}'")
 
         user_data = self.cursor.fetchone()
         self.close_db()
@@ -173,7 +175,7 @@ class SQLClass():
 
         self.db_connect()
 
-        self.cursor.execute(f"SELECT * FROM User WHERE user_id='{user_id}'")
+        self.cursor.execute(f"SELECT * FROM Users WHERE user_id='{user_id}'")
         user = self.cursor.fetchone()
         self.close_db()
         return user
@@ -207,23 +209,26 @@ class SQLClass():
         self.db_connect()
         self.cursor.execute(f"SELECT * FROM Workspaces WHERE user_id={user_id}")
         arr = self.cursor.fetchall()
-        res = arr[0] if (len(arr) > 0) else ()
+        data = [{"id": el[0], "name": el[1], "user_id": el[2]} for el in arr]
         self.close_db()
-        return res
+        return data
 
 
     def get_tables(self, workspace_id:int):
         self.db_connect()
         self.cursor.execute(f"SELECT * FROM Tables WHERE workspace_id={workspace_id}")
         arr = self.cursor.fetchall()
-        res = arr[0] if (len(arr) > 0) else ()
+        
+        if len(arr) <= 0: arr = ()
+
+        data = [{"id": el[0], "name": el[1], "workspace_id": el[2]} for el in arr]
+        
         self.close_db()
-        return res
+        return data
 
     def get_cards(self, table_id:int):
         self.db_connect()
-        self.cursor.execute(f"SELECT * FROM Carts WHERE table_id={table_id}")
+        self.cursor.execute(f"SELECT * FROM Cards WHERE table_id={table_id}")
         arr = self.cursor.fetchall()
-        res = arr[0] if (len(arr) > 0) else ()
         self.close_db()
-        return res
+        return arr

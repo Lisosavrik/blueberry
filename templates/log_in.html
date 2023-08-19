@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="log_in.css">
     <link rel="stylesheet" href="main.css">
 
+    <script lang="js" src="/static/scripts/jquery.min.js"></script>
+
 </head>
 <body>
     <main class="auth_main">
@@ -28,17 +30,17 @@
             <a href=""> Sign up</a>
         </div>
 
-        <form action="" method="post" class="auth_form auth_form_local">
+        <form action="" method="post" id="login_form" class="auth_form auth_form_local">
             <div id="email_field" class="input_field">
                 <label for="email_field" class="input_name">Email</label>
-                <input type="email" required>
+                <input  id="email-input" type="email" required>
             </div>
         
 
 
             <div id="password_field" class="input_field">
                 <label for="password_field" class="input_name">Password</label>
-                <input type="password" required>
+                <input id="password-input" type="password" required>
             </div>
 
             <div id="log_in_btn" class="auth_btn">
@@ -49,9 +51,10 @@
                 <a href="">Forgot password?</a>
             </div>
         </form>
-
     </main>
-
-
+    
+    
+    <script lang="js" src="/static/scripts/utils.js"></script>
+    <script lang="js" src="/static/scripts/jquery_login.js"></script>
 </body>
 </html>
