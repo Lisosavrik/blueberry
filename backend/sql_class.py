@@ -25,7 +25,7 @@ class SQLClass():
         self.db_connect()
 
         self.cursor.execute(f"""
-            INSERT INTO Users(name, log_in, password) VALUES('{user_name}', '{log_in}', '{password}')
+            INSERT INTO Users(name, log_in, password, is_confirmed) VALUES('{user_name}', '{log_in}', '{password}', '0')
             """)
         
         self.update_db()
@@ -232,3 +232,28 @@ class SQLClass():
         arr = self.cursor.fetchall()
         self.close_db()
         return arr
+    
+    def get_user_by_email(self, email):
+        self.db_connect()
+        self.cursor.execute(f"SELECT * FROM Users WHERE log_in='{email}'")
+        arr = self.cursor.fetchall()
+        arr = arr[0] if len(arr) > 0 else ()
+
+        usr = {
+            "id": arr[0],
+            "name": arr[1],
+            "email": arr[2],
+            "password": arr[3],
+            "is_confirm": arr[4]
+        } if len(arr) else None
+
+        self.close_db()
+        return usr
+    
+    def update_condirmed(self, id):
+        self.db_connect()
+
+        self.cursor.execute(f"UPDATE Users SET is_confirmed='1' WHERE user_id='{id}'")
+
+        self.update_db()
+        self.close_db()

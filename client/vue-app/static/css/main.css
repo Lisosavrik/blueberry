@@ -157,6 +157,7 @@ header{
     border-radius: 25px;
     padding: 30px 40px;
     padding-bottom: 30px;
+    background-color: whitesmoke;
 }
 
 .form_header {
@@ -165,7 +166,7 @@ header{
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     position: relative;
 }
 
@@ -207,6 +208,24 @@ header{
     padding: 0px 25px;
     font-family:  "Monaco", sans-serif;
     font-size: 15px;
+    outline: none !important;
+}
+
+/* .input_field input:focus {
+    border-color: red;
+} */
+
+
+.input_field input:invalid {
+    border-color: red;
+}
+
+.input_field input:valid {
+    border-color: green;
+}
+
+.input_field input:placeholder-shown  {
+    border-color: black;
 }
 
 .input_name{
@@ -233,4 +252,16 @@ header{
 
 .auth_btn button:hover{
     background-color: rgb(83, 132, 177);
+}
+
+.animation{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+.email_link{
+    background-color: rgb(83, 132, 177);
+    width: fit-content;
 }

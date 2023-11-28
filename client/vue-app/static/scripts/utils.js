@@ -31,40 +31,41 @@ function parseForm(formId, formValueIds, callback) {
  * @param {Function} callback
  * @param {boolean} [clearInput=false]
  */
-function parseClick(clickId, clickValIds, callback, clearInput) {
-    if (clearInput === undefined) clearInput = false;
 
-    $(`#${clickId}`).on("click", (event) => {
+
+
+function parseClick({clickId, clickValIds, callback, clearInput, parent}) {
+    function lookForElement(elementId) {
+        if (parent) return parent.children(elementId)
+        return $(elementId)
+    }
+
+    if (clearInput === undefined) clearInput = false;
+    console.log(clickId, clickValIds)
+
+    lookForElement(`#${clickId}`).on("click", (event) => {
         const parsedVals = clickValIds.map((clickVal) => {
-            const val = $(`#${clickVal}`).val();
-            $(`#${clickVal}`).val('');
+            const val = lookForElement(`#${clickVal}`).val();
+
+            lookForElement(`#${clickVal}`).val('');
+            
             return val;
+            
         });
         callback(...parsedVals);
     })
 }
 
-class ServerApi {
+function initEnterEvent(fieldEnterId, buttonClickId){
+    $(`#${fieldEnterId}`).on("keypress", (event) =>{
+        let key = event.which;
+        if (key === 13) {
+            event.preventDefault(); 
+            $(`#${buttonClickId}`).click();
+        }
+    });
+}
 
-    get(url, callback, error)  {
-        return $ajax({
-            type: 'GET',
-            url: url,
-            success: callback
-        }).fail(error);
-    }
-
-    post(url, callback, error) {
-        return $ajax({
-            type: 'POST',
-            url: url,
-            success: callback
-        }).fail(error);
-    }
-
-    getTables(callback) {
-        this.get("tables_url", callback, (error) => {
-            notify(error);
-        })
-    }
+function  randInt(a, b) {
+    return a + Math.floor(Math.random() * (b - a + 1));
 }

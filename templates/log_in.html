@@ -7,18 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Log in to Blueberry</title>
-    <link rel="stylesheet" href="log_in.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/static/css/log_in.css">
+    <link rel="stylesheet" href="/static/css/main.css">
 
+    <script src="../static/scripts/matter.min.js"></script>
     <script lang="js" src="/static/scripts/jquery.min.js"></script>
 
 </head>
 <body>
+    <div class="animation" id="animation"></div>
     <main class="auth_main">
         <div class="total_logo">
             <div id="logo" class="logo logo_local" title="To the main page">
                 <a href="">
-                    <img src="img/blueberry_logo.jpg" alt="Blueberry.com" class="logo_img">
+                    <img src="/static/img/blueberry_logo.png" alt="Blueberry.com" class="logo_img">
                     <span class="header_title1">Blue</span>
                     <span class="header_title2">berry</span>
                 </a>
@@ -33,17 +35,17 @@
         <form action="" method="post" id="login_form" class="auth_form auth_form_local">
             <div id="email_field" class="input_field">
                 <label for="email_field" class="input_name">Email</label>
-                <input  id="email-input" type="email" required>
+                <input  id="email-input" placeholder=" " type="email" required>
             </div>
         
 
 
             <div id="password_field" class="input_field">
                 <label for="password_field" class="input_name">Password</label>
-                <input id="password-input" type="password" required>
+                <input id="password-input" type="password" placeholder=" " required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
             </div>
 
-            <div id="log_in_btn" class="auth_btn">
+            <div id="log_in_btn" class="auth_btn auth_btn-local">
                     <button type="submit"> Log in </button>
             </div>
 
@@ -56,5 +58,6 @@
     
     <script lang="js" src="/static/scripts/utils.js"></script>
     <script lang="js" src="/static/scripts/jquery_login.js"></script>
+    <script src="../static/scripts/matter.js"></script>
 </body>
 </html>

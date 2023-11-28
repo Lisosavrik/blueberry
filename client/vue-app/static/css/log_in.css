@@ -2,6 +2,7 @@
 
 .form_header_local {
     left: 86px;
+    padding-bottom: 10px;
 }
 
 .logo_local {
@@ -13,7 +14,9 @@
 .auth_form_local{
     gap: 20px;
 }
-
+.auth_form_local:invalid .auth_btn-local button{
+    background-color: lightslategray;
+}
 
 .forgot_password a{
     color: black;

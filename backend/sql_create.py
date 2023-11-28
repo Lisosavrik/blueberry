@@ -9,7 +9,8 @@ c.execute("""
                 user_id varchar(255) PRIMARY KEY,
                 name varchar(255),
                 log_in varchar(255),
-                password varchar(255)
+                password varchar(255),  
+                is_confirmed BOOLEAN NOT NULL CHECK (is_confirmed IN (0, 1))
         );
 """);
 

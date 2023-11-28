@@ -1,10 +1,13 @@
 from flask import Flask, jsonify, render_template, redirect, url_for, request, Response, Blueprint, flash
 from flask_cors import CORS
-# from flask import globals
-from flask_login import LoginManager, current_user, login_required, login_user
+from flask_login import LoginManager, current_user, login_required, login_user, logout_user
+from flask_mail import Mail
 from user_cl import User
 from backend.sql_class import SQLClass
-from dotenv import dotenv_values
+from email_token import generate_token, confirm_token
+from email_utils import send_email
+from config import Config
+
 
 mySQl = SQLClass('blueberry.db')
 
@@ -13,12 +16,21 @@ login_manager = LoginManager()
 
 app = Flask(__name__)
 login_manager.init_app(app)
+app.config.from_object(Config())
+mail = Mail(app)
+
+
+def create_email(confirm_url):
+    with open("static/email.html", "r") as file:
+        file_text = file.read()
+    
+    return file_text.format(email_link=confirm_url)
 
 def ErrorResponse(err_message: str): 
     return Response(err_message, 400, mimetype="application/json")
 
 def OkMessage(ok_message: str):
-    return Response(ok_message, 200, mimetype="application/json")
+    return jsonify(ok_message)
 
 def render(page_name):
     return render_template(f"{page_name}.html")
@@ -28,14 +40,21 @@ def render(page_name):
 def index():
     return render("index")
 
+@app.route("/have_to_confirm", methods=["GET"])
+def confirm():
+    return render('have_to_confirm')
+
+
+
 @app.route("/sign_up", methods=["GET"])
 def signup_page():
     return render("sign_up")
 
 @app.route('/log_in', methods=["GET"])
 def login_page():
+    1
     if current_user.is_authenticated:
-        return redirect(url_for('training'))
+        return redirect(url_for('training_page'))
     else:
         return render("log_in")
 
@@ -58,7 +77,7 @@ def load_user(user_id):
     if user == None:
         return None
     else:
-        return User(user[0], user[2], user[3])
+        return User(user[0], user[2], user[3], user[4])
 
 
 
@@ -103,6 +122,14 @@ def signup():
     else:
         mySQl.new_user(user_name=name, log_in=login, password=password)
 
+    logout_user()
+    token = generate_token(login, app)
+    confirm_url = url_for("verification", token=token, _external=True)
+    text_with_url = create_email(confirm_url)
+    subject = "Please confirm your email"
+
+    send_email(login, subject, text_with_url, app, mail)
+
     return jsonify("oke!")
 
 
@@ -127,8 +154,8 @@ def add_table():
     title = data["title"]
     workspace_id = data["workspace_id"]
     if len(title) >= 1 and workspace_id != None:
-        mySQl.new_table(title, workspace_id)
-        return OkMessage("Table added")
+        new_table_id = mySQl.new_table(title, workspace_id)
+        return jsonify({"table_id": new_table_id})
     else:
         return  ErrorResponse("Table not added")
 
@@ -142,8 +169,9 @@ def add_card():
     table_id = data["table_id"]
 
     if len(key) >=1 and len(value) >= 1:
-        mySQl.new_card(key, value, table_id)
-        return OkMessage("card added")
+        new_card_id = mySQl.new_card(key, value, table_id)
+        today  = mySQl.get_today()
+        return {"card_id": new_card_id, "today": today}
     else:
         return  ErrorResponse("card not added")
 
@@ -152,17 +180,20 @@ def add_card():
 @login_required
 def delete_workspace(workspace_id: str):
     mySQl.delete_workspace(int(workspace_id))
+    return OkMessage("ok")
 
 
 @app.route("/api/tables/delete/<table_id>", methods=["DELETE"])
 @login_required
 def delete_table(table_id: str):
-    mySQl.delete_workspace(int(table_id))
+    mySQl.delete_table(int(table_id))
+    return OkMessage("ok")
 
 @app.route("/api/cards/delete/<card_id>", methods=["DELETE"])
 @login_required
 def delete_card(card_id: str):
-    mySQl.delete_workspace(int(card_id))
+    mySQl.delate_card(int(card_id))
+    return OkMessage("ok")
 
 
 @app.route("/api/tables/move_table/<table_id>", methods=["POST"])
@@ -203,26 +234,21 @@ def get_workspaces():
 
 
 
+@app.route("/confirm/<token>", methods=["GET"])
+def verification(token: str):
+    email = confirm_token(token, app=app)
+    if not email: return jsonify("link not valid")
+    user = mySQl.get_user_by_email(email)
+    if user != None:
+        mySQl.update_condirmed(user["id"])
+        return render('email_verification')
+    else:
+        return ErrorResponse("There is no user in database")
 
 
-
-# @app.route("/api/workspaces/<workspace_id>", methods=["GET"])
-# @login_required
-# def get_tables(workspace_id:str):
-#     return jsonify(mySQl.get_tables(int(workspace_id)))
-
-
-
-
-# @app.route("/api/tables/<table_id>", methods=["GET"])
-# @login_required
-# def get_cards(table_id:str):
-#     return jsonify(mySQl.get_cards(int(table_id)))
 
 
 
 if __name__ == "__main__":
-    app.secret_key = dotenv_values(".env")["SECRET_KEY"]
-app.                     run(port=8000, debug=True)
-
-login_manager.init_app(app)
+    app.run(port=8000, debug=True)
+    login_manager.init_app(app)

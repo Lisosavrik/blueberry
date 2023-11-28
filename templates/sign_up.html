@@ -7,17 +7,21 @@
     <meta name="keywords" content="Blueberry, English, language, Spaced repetition, registration, log in">
 
     <title>Blueberry login</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/sign_up.css">
 
+    <script src="../static/scripts/matter.min.js"></script>
     <script lang="js" src="/static/scripts/jquery.min.js"></script>
+    <script lang="js" src="/static/scripts/jquery_easing.js"></script>
+    
 
 </head>
 <body>
+    <div class="animation" id="animation"></div>
     <main class="auth_main auth_main_local">
         <div id="logo" title="To the main page" class="logo logo_local">
             <a href="file:///Users/mac/Desktop/хуйня/english_site/index.html">
-                <img src="img/blueberry_logo.jpg" alt="Blueberry.com" class="logo_img">
+                <img src="/static/img/blueberry_logo.png" alt="Blueberry.com" class="logo_img">
                 <span class="header_title1">Blue</span>
                 <span class="header_title2">berry</span>
             </a>
@@ -32,20 +36,20 @@
         <form id="cool-form" class="auth_form auth_form_local"> 
             <div id="name_field" class="input_field">
                 <label for="name_field">User Name</label>
-                <input id="name-field-value" type="text" required>
+                <input id="name-field-value" placeholder=" " type="text" required>
                 
             </div>
             <div id="email_field" class="input_field">
                 <label for="email_field">Email</label>
-                <input id="email_field_value" type="email" required>
+                <input id="email_field_value" placeholder=" " type="email" required>
             </div>
             <div id="password_field" class="input_field">
                 <label for="password_field">Password</label>
-                <input id="password_field_value" type="password" required>
+                <input id="password_field_value" placeholder=" " required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
             </div>
 
             <div class="password_info">
-                <img src="svg/info.svg" alt="info" class="password_info_img">
+                <img src="static/svg/info.svg" alt="info" class="password_info_img">
 
                 <div id="password_instr" class="password_instr">
                     <ul>
@@ -67,8 +71,16 @@
                 <button type="submit"> Sign up </button>
             </div>
         </form>
+        <!-- <img src="static/img/blueberry_logo_png.png" alt="blueberry_png" class="blueberry_png"> -->
+        <div  id="emailVarification"  class="emailVarification">
+            <label>Your  code:</label>
+            <input id="emailVarificationInput">
+            <button id="emailVarificationBtn">Send</button>
+        </div>
     </main>
     <script lang="js" src="/static/scripts/utils.js"></script>
+    <script lang="js" src="/static/scripts/serverApiClass.js"></script>
     <script lang="js" src="/static/scripts/jquery_sign_up.js"></script>
+    <script src="../static/scripts/matter.js"></script>
 </body>
 </html>

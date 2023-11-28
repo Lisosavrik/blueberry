@@ -4,5 +4,9 @@ venv
 __pycache__
 backend/__pycache__
 
+.env
 .DS_Store
 static/img/.DS_Store
+client/vue-app/.vscode/
+blueberry.db
+blueberry.sqbpro
