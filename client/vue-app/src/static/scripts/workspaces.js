@@ -271,7 +271,6 @@ function initAddCardButton(tableId, tableEl) {
 function main() {
     initAddWorkspaceButton();
     showWorkspacesTablesCards();
-
 }
 
 $(document).ready(main)

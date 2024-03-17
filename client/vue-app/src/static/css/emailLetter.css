@@ -1,0 +1,135 @@
+body{
+    background-image: url(../img/font_aside.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* .title{
+    display: flex;
+    gap: 20px;
+    height: 150px;
+    justify-content: space-between;
+} */
+
+.name{
+    font-size: 45px;
+    height: fit-content;
+    margin-top: 80px;
+    color: rgb(31, 52, 71);
+}
+
+
+/* .animation{
+    scale: 0.4;
+    width: fit-content;
+    position: relative;
+    bottom: 26px;
+    right: 40px;
+} */
+
+
+/* 
+.all{
+    position: relative;
+}
+
+.body{
+    width: 200px;
+}
+
+.hand{
+    width: 120px;
+    position: absolute;
+    top: -24px;
+    left: 180px;
+    animation: rotating 1s;
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} */
+
+@keyframes rotating {
+    100%{
+        rotate: z 30deg;
+        top: 11px;
+        left: 198px;
+    }
+}
+/* 
+.verify_btn{
+    width: fit-content;
+
+}
+.verify_btn a{
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    color: whitesmoke;
+    background-color: #1f3447;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+} */
+
+.verify_btn a:hover{
+    background-color: rgb(83, 132, 177);
+}
+
+/* .main_part{
+.line{
+    width: 200px;
+    border-bottom: 0.5px solid #1f3447;
+}
+
+.verify_txt{
+    font-size: 16px;
+    padding: 0px 15px;
+    margin: 0;
+    text-align: justify;
+}
+
+.main_txt{
+    font-size: 12px;
+} */
+/* 
+.p1{
+    text-align: center;
+}
+.p2{
+    text-align:justify;
+    padding: 0px 10px;
+    margin-top: 20px;
+} */
+    /* width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+} */ 
+
+/* 
+/* .link_txt{
+    text-decoration: none;
+    color: #1f3447;
+}  */
+/* 
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    max-width: 150px;
+    gap: 5px;
+    height: fit-content;
+    margin-top: 10px;
+} */
+
+/* .logo h5, h6{
+    margin: 0;
+    width: fit-content;
+    color: #1f3447;
+    text-align: center;
+} */

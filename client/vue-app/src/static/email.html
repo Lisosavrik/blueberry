@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email</title>
+        <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+        <!-- <link rel="stylesheet" href="./css/emailLetter.css"> -->
+        <style>
+            /* @keyframes rotating {
+            100%{
+                rotate: z 30deg;
+                top: 11px;
+                left: 198px;}
+            } */
+
+        </style>
+
+    </head>
+
+    <body style="
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(cid:BackgroundImg)">
+        <div
+            style="border-style: solid;
+            border-color: whitesmoke">
+            <div class="letter" style="
+                width:53vw;
+                max-width: 500px;
+                margin: auto;
+                height:fit-content;
+                background-color: whitesmoke;
+                font-family: 'Monaco';
+                border-radius: 25px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                min-width: 320px;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                ">
+                
+                
+                <!-- <div class="title" style="
+                display: flex;
+                gap: 20px;
+                height: 150px;
+                justify-content: space-between;"> -->
+                    <!-- <div class="animation" style="
+                        scale: 0.4;
+                        width: fit-content;
+                        position: relative;
+                        bottom: 26px;
+                        right: 40px;">
+                        <div class="all" style="position: relative;">
+                            <img class="body" style="
+                            width: 200px;" 
+                            src="./img/blueberry_fly.png-autosave.png">
+
+                            <img class="hand" style="
+                            width: 120px;
+                            position: absolute;
+                            top: -24px;
+                            left: 180px;
+                            animation: rotating 1s;
+                            animation-timing-function: cubic-bezier(0, 0, 1, 1);
+                            animation-iteration-count: infinite;
+                            animation-direction: alternate;"
+                            src="./img/hand5.png">
+                            <img class="hand" src="./img/otherhand.png">
+                        </div>
+                    </div> -->
+                    
+                <table class="logo" style="
+                all: unset;
+                align-items: center;
+                height: fit-content;
+                margin-top: 10px;">
+                    <tbody
+                    style="
+                    margin-bottom: 4vh;
+                    display: block;
+                    width: fit-content;
+                    max-width: 190px;
+                    padding: 7px;
+                    padding-left: 0;
+                    padding-top: 10px;
+                    ">
+                        <tr>
+                            <td style="
+                            margin: 0;
+                            width: 130px;
+                            color: #1f3447;
+                            text-align: center;
+                            font-size: 0.9em;
+                            /* padding-bottom: 0.5vh; */
+                            "
+                            >Blueberry</td>
+                        </tr>
+                        <tr>
+                            <td style="
+                            margin: 0;
+                            width: fit-content;
+                            color: #1f3447;
+                            font-size: 0.7em;
+                            text-align: center;">Your juicy place to learn everything!</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="main_part" style="
+                all: unset;
+                color: #1f3447;
+                width: 100%;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="verify_txt" style="
+                                    font-size: 18px;
+                                    padding: 0px 15px;
+                                    margin: 0;
+                                    text-align: center;
+                                    padding-bottom: 3vh;"
+                                    >Verify your email to finish signing up</p>
+                                </td>
+                            </tr>   
+
+                            <tr>
+                                <td>
+                                    <div class="line" style="
+                                    width: 60%;
+                                    max-width: 200px;
+                                    margin: auto;
+                                    border-bottom: 0.5px solid #1f3447;
+                                    margin-bottom: 2vh;">
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="main_txt" style="
+                                    font-size: 15px;
+                                    padding-bottom: 2vh;
+                                    ">
+                                        <p class="p1" style="
+                                        text-align: center;
+                                        color: #1f3447;
+                                        "> Thank you for choosing Blueberry!</p>
+                                        <p class="p2" style="
+                                        color: #1f3447;
+                                        text-align:justify;
+                                        padding: 0px 10px;">
+                                            Please confirm you email address by clicking on the button below or use this
+                                            <a href="{{email_link}}" class="link_txt" style="color: #1f3447"
+                                            > link</a> within <b>48 hours.</b>
+                                        </p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="verify_btn" style=" 
+                                    width: fit-content;
+                                    margin: auto;
+                                    padding: 5%;
+                                    ">
+                                        <a id="vefify_btn_a" href="{{email_link}}" style="
+                                            display: block;
+                                            text-decoration: none;
+                                            font-size: 15px;
+                                            color: whitesmoke;
+                                            background-color: #1f3447;
+                                            border-radius: 25px;
+                                            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                                            padding: 10px;
+                                            box-sizing: border-box;
+                                            width: fit-content;
+                                            height: fit-content;"
+                                        >Verify my email</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>   
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

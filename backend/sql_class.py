@@ -257,3 +257,5 @@ class SQLClass():
 
         self.update_db()
         self.close_db()
+
+mySQl = SQLClass('blueberry.db')

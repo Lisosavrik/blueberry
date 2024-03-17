@@ -1,23 +1,4 @@
 
-
-.form_header_local {
-    left: 86px;
-    padding-bottom: 10px;
-}
-
-.logo_local {
-    scale: 0.7;
-    right: 145px;
-    top: 54px;
-}
-
-.auth_form_local{
-    gap: 20px;
-}
-.auth_form_local:invalid .auth_btn-local button{
-    background-color: lightslategray;
-}
-
 .forgot_password a{
     color: black;
     text-decoration: none;

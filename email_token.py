@@ -2,7 +2,6 @@ from itsdangerous import URLSafeTimedSerializer
 
 
 def generate_token(email, app):
-    1
     serializer = URLSafeTimedSerializer(app.config["SECRET_KEY"])
     return serializer.dumps(email, salt=app.config["SECURITY_PASSWORD_SALT"])
 

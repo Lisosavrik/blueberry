@@ -1,0 +1,146 @@
+@import url("@/static/css/reset.css");
+
+@font-face {
+    font-family: "Monaco-Local";
+    src: local("Monaco-Local"), url("@/static/fonts/Monaco.ttf");
+}
+
+body {
+    background-color:rgb(245, 245, 245);
+    margin: 0%;
+    font-family: "Monaco", "Monaco-Local", sans-serif;
+}
+
+header{
+    background-color: #f5f5f5;
+}
+
+button, input {
+    font-family: "Monaco", "Monaco-Local", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+.footer_flex_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    bottom: 0%;
+    width: 100%;
+    height: 180px;
+    position: relative;
+    border-top: 2px solid rgb(31,52,71);
+}
+
+.information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.information div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 150px;
+}
+
+.information div a{
+    color: rgb(31,52,71);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: scale 0.5s;
+}
+
+.information div a:hover{
+    scale: 1.1;
+}
+
+.logo_footer{
+    width: 300px;
+}
+
+.text_footer{
+    position: absolute;
+    margin: 10px;
+    bottom: 20px;
+    left:10px;
+    font-size: 15px;
+    color: rgb(31,52,71);
+    text-align: center;
+}
+
+.footer_title1{
+    position: absolute;
+    font-size: 24px;
+    left: 108px;
+    bottom: 112px;
+    font-weight: 700;
+    color: rgb(31,52,71);
+}
+
+.footer_title2{
+    position: absolute;
+    font-size: 22px;
+    left: 80px;
+    bottom: 86px;
+    font-weight: 700;
+    color: rgb(31,52,71);
+}
+
+.logo_footer_img{
+    position: absolute;
+    left: 35px;
+    bottom: 85px;
+
+}
+
+.up a{
+    color: rgb(31,52,71);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.up{
+    height: fit-content;
+    position: absolute;
+    bottom: 10px;
+    left: 750px;
+    transition: scale 1s;
+}
+
+.up:hover{
+    scale: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.animation{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+.email_link{
+    background-color: rgb(83, 132, 177);
+    width: fit-content;
+}

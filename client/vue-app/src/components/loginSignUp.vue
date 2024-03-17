@@ -1,6 +1,6 @@
 <template>        
 
-    <div id="email_header" class="form_header form_header_local">
+    <div id="email_header" class="form_header">
         <span>Don't have an account? </span>
         <a href=""> Sign up</a>
     </div>
@@ -11,8 +11,5 @@
 </script>
 
 <style>
-.form_header_local {
-    left: 86px;
-    padding-bottom: 10px;
-}
+@import url("../static/css/authForm.css");
 </style>
